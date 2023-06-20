@@ -4,6 +4,10 @@ package gui;
 		A basic implementation of the JDialog class.
 **/
 
+import bank.actorfactory.account.BankAccountTypeEnum;
+import bank.actorfactory.customer.BankCustomerTypeEnum;
+import bank.actorfactory.customer.CustomerCreationParam;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -171,20 +175,27 @@ public class JDialog_AddPAcc extends JDialog
 		}
 	}
 
-	void JButtonOK_actionPerformed(java.awt.event.ActionEvent event)
-	{
-       parentframe.accountnr=JTextField_ACNR.getText();
-       parentframe.clientName=JTextField_NAME.getText();
-       parentframe.street=JTextField_STR.getText();
-       parentframe.city=JTextField_CT.getText();
-       parentframe.zip=JTextField_ZIP.getText();
-       parentframe.state=JTextField_ST.getText();
-       if (JRadioButton_Chk.isSelected())
-           parentframe.accountType="Ch";
-           else
-           parentframe.accountType="S";
-	   parentframe.newaccount=true;
-       dispose();
+	void JButtonOK_actionPerformed(java.awt.event.ActionEvent event) {
+		CustomerCreationParam customerCreationParam = new CustomerCreationParam();
+		customerCreationParam.setBankCustomerTypeEnum(BankCustomerTypeEnum.Personal);
+		customerCreationParam.setAccId(JTextField_ACNR.getText());
+		customerCreationParam.setName(JTextField_NAME.getText());
+		customerCreationParam.setStreet(JTextField_STR.getText());
+		customerCreationParam.setCity(JTextField_CT.getText());
+		customerCreationParam.setZip(JTextField_ZIP.getText());
+		customerCreationParam.setEmail(JTextField_EM.getText());
+		customerCreationParam.setBirthDate(JTextField_BD.getText());
+
+		if (JRadioButton_Chk.isSelected())
+			customerCreationParam.setBankAccountTypeEnum(BankAccountTypeEnum.Checking);
+
+		else
+			customerCreationParam.setBankAccountTypeEnum(BankAccountTypeEnum.Saving);
+
+		parentframe.bankController.createCustomer(customerCreationParam);
+		parentframe.newaccount = true;
+
+		dispose();
 	}
 
 	void JButtonCalcel_actionPerformed(java.awt.event.ActionEvent event)

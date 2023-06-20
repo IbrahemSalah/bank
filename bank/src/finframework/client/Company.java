@@ -1,5 +1,6 @@
 package finframework.client;
 
+import bank.actorfactory.customer.CustomerCreationParam;
 import finframework.actor.IAccount;
 import finframework.actor.ICustomer;
 import finframework.transaction.proxy.ITransactionProxy;
@@ -8,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public abstract class Company {
+public abstract class Company<T> {
 
     protected List<ICustomer> customerList;
     protected ITransactionProxy iTransactionProxy;
@@ -26,7 +27,8 @@ public abstract class Company {
         iTransactionProxy.moneyOut(historyFunctor, getAccount(accountNumber), amount);
     }
 
-    public abstract void createCustomer();
+    public abstract void createCustomer(T t);
+
 
     public abstract void createAccount();
 

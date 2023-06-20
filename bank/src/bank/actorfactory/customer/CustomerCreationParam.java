@@ -1,5 +1,7 @@
 package bank.actorfactory.customer;
 
+import bank.actorfactory.account.BankAccountTypeEnum;
+
 import java.util.Date;
 
 public class CustomerCreationParam {
@@ -19,7 +21,16 @@ public class CustomerCreationParam {
 
     private String birthDate;
 
-    public CustomerCreationParam(String name, String street, String city, String state, String zip, String email, int numOfEmployees, String birthDate) {
+    private String accId;
+
+
+    BankAccountTypeEnum bankAccountTypeEnum;
+
+    BankCustomerTypeEnum bankCustomerTypeEnum;
+
+
+    public CustomerCreationParam(String name, String street, String city, String state, String zip, String email, int numOfEmployees, String birthDate, String accId
+    , BankAccountTypeEnum bankAccountTypeEnum, BankCustomerTypeEnum bankCustomerTypeEnum) {
         this.name = name;
         this.street = street;
         this.city = city;
@@ -28,6 +39,13 @@ public class CustomerCreationParam {
         this.email = email;
         this.numOfEmployees = numOfEmployees;
         this.birthDate = birthDate;
+        this.accId =accId;
+        this.bankAccountTypeEnum = bankAccountTypeEnum;
+        this.bankCustomerTypeEnum = bankCustomerTypeEnum;
+    }
+
+    public CustomerCreationParam() {
+
     }
 
     public String getName() {
@@ -92,5 +110,29 @@ public class CustomerCreationParam {
 
     public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public String getAccId() {
+        return accId;
+    }
+
+    public void setAccId(String accId) {
+        this.accId = accId;
+    }
+
+    public BankAccountTypeEnum getBankAccountTypeEnum() {
+        return bankAccountTypeEnum;
+    }
+
+    public void setBankAccountTypeEnum(BankAccountTypeEnum bankAccountTypeEnum) {
+        this.bankAccountTypeEnum = bankAccountTypeEnum;
+    }
+
+    public BankCustomerTypeEnum getBankCustomerTypeEnum() {
+        return bankCustomerTypeEnum;
+    }
+
+    public void setBankCustomerTypeEnum(BankCustomerTypeEnum bankCustomerTypeEnum) {
+        this.bankCustomerTypeEnum = bankCustomerTypeEnum;
     }
 }

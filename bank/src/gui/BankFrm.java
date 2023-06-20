@@ -1,10 +1,13 @@
 package gui;
 
+import bank.client.BankController;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowEvent;
+import java.util.List;
 
 /**
  * A basic JFC based application.
@@ -15,6 +18,8 @@ public class BankFrm extends JFrame
      * init variables in the object
      ****/
     String accountnr, clientName,street,city,zip,state,accountType,clientType,amountDeposit;
+	BankController bankController = new BankController();
+
     boolean newaccount;
     private DefaultTableModel model;
     private JTable JTable1;
@@ -142,6 +147,16 @@ public class BankFrm extends JFrame
 		}
 	}
 
+	public void RefreshData() {
+		model.setNumRows(0);
+		List< String[]> accounts = bankController.getAllAccounts();
+		for (String[] row : accounts)
+		{
+			model.addRow(row);
+		}
+
+	}
+
 	class SymWindow extends java.awt.event.WindowAdapter
 	{
 		public void windowClosing(WindowEvent event)
@@ -205,19 +220,19 @@ public class BankFrm extends JFrame
 		JDialog_AddPAcc pac = new JDialog_AddPAcc(myframe);
 		pac.setBounds(450, 20, 300, 330);
 		pac.show();
-
-		if (newaccount){
-            // add row to table
-            rowdata[0] = accountnr;
-            rowdata[1] = clientName;
-            rowdata[2] = city;
-            rowdata[3] = "P";
-            rowdata[4] = accountType;
-            rowdata[5] = "0";
-            model.addRow(rowdata);
-            JTable1.getSelectionModel().setAnchorSelectionIndex(-1);
-            newaccount=false;
-        }
+		RefreshData();
+//		if (newaccount){
+//            // add row to table
+//            rowdata[0] = accountnr;
+//            rowdata[1] = clientName;
+//            rowdata[2] = city;
+//            rowdata[3] = "P";
+//            rowdata[4] = accountType;
+//            rowdata[5] = "0";
+//            model.addRow(rowdata);
+//            JTable1.getSelectionModel().setAnchorSelectionIndex(-1);
+//            newaccount=false;
+//        }
 
        
         
@@ -234,19 +249,21 @@ public class BankFrm extends JFrame
 		JDialog_AddCompAcc pac = new JDialog_AddCompAcc(myframe);
 		pac.setBounds(450, 20, 300, 330);
 		pac.show();
+		RefreshData();
+
 		
-		if (newaccount){
-            // add row to table
-            rowdata[0] = accountnr;
-            rowdata[1] = clientName;
-            rowdata[2] = city;
-            rowdata[3] = "C";
-            rowdata[4] = accountType;
-            rowdata[5] = "0";
-            model.addRow(rowdata);
-            JTable1.getSelectionModel().setAnchorSelectionIndex(-1);
-            newaccount=false;
-        }
+//		if (newaccount){
+//            // add row to table
+//            rowdata[0] = accountnr;
+//            rowdata[1] = clientName;
+//            rowdata[2] = city;
+//            rowdata[3] = "C";
+//            rowdata[4] = accountType;
+//            rowdata[5] = "0";
+//            model.addRow(rowdata);
+//            JTable1.getSelectionModel().setAnchorSelectionIndex(-1);
+//            newaccount=false;
+//        }
 
 	}
 

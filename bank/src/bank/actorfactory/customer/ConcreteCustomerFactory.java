@@ -3,14 +3,15 @@ package bank.actorfactory.customer;
 import finframework.actor.ICustomer;
 import finframework.actorfactory.ICustomerFactory;
 
-public class ConcreteCustomerFactory implements ICustomerFactory<BankCustomerTypeEnum, CustomerCreationParam> {
+public class ConcreteCustomerFactory implements ICustomerFactory<CustomerCreationParam> {
     @Override
-    public ICustomer createCustomer(BankCustomerTypeEnum bankCustomerTypeEnum, CustomerCreationParam customerCreationParam) {
+    public ICustomer createCustomer(CustomerCreationParam customerCreationParam) {
+        ICustomer  customer;
+        if (customerCreationParam.getBankCustomerTypeEnum() == BankCustomerTypeEnum.Personal) {
 
-        if (bankCustomerTypeEnum == BankCustomerTypeEnum.Personal) {
-            return new Person(customerCreationParam.getName(), customerCreationParam.getCity(), customerCreationParam.getState(),
+            return   new Person(customerCreationParam.getName(), customerCreationParam.getCity(), customerCreationParam.getState(),
                     customerCreationParam.getZip(), customerCreationParam.getEmail(), customerCreationParam.getBirthDate());
-        } else if (bankCustomerTypeEnum == BankCustomerTypeEnum.Organization) {
+        } else if (customerCreationParam.getBankCustomerTypeEnum() == BankCustomerTypeEnum.Organization) {
             return new Organization(customerCreationParam.getName(), customerCreationParam.getCity(), customerCreationParam.getState(),
                     customerCreationParam.getZip(), customerCreationParam.getEmail(), customerCreationParam.getNumOfEmployees());
         } else {

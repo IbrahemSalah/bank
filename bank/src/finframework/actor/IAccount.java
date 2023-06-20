@@ -1,8 +1,8 @@
 package finframework.actor;
 
 public interface IAccount {
-    int getBalance();
-    int addInterest();
+    double getBalance();
+    double addInterest();
     String getId();
     String getEmail();
 }

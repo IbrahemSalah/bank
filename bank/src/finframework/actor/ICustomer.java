@@ -6,7 +6,7 @@ public interface ICustomer {
 
     void addAccount(IAccount iAccount);
 
-    void getAccount(String id);
+    IAccount getAccount(String id);
 
     List<IAccount> getAllAccounts();
 }

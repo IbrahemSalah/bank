@@ -2,7 +2,7 @@ package finframework.actorfactory;
 
 import finframework.actor.ICustomer;
 
-public interface ICustomerFactory {
+public interface ICustomerFactory <T, E>{
 
-    ICustomer createCustomer();
+    ICustomer createCustomer(T t, E e);
 }

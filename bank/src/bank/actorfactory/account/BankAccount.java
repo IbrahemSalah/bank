@@ -1,9 +1,10 @@
-package bank.actorfactory;
+package bank.actorfactory.account;
 
 import finframework.actor.IAccount;
 
 public abstract class BankAccount implements IAccount {
 
+    String email;
     String accountNumber;
 
     @Override
@@ -15,7 +16,6 @@ public abstract class BankAccount implements IAccount {
         this.email = email;
     }
 
-    String email;
     public String getAccountNumber() {
         return accountNumber;
     }
@@ -23,7 +23,6 @@ public abstract class BankAccount implements IAccount {
     public void setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;
     }
-
 
 
 }

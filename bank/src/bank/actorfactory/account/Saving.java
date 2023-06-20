@@ -1,9 +1,15 @@
-package bank.actorfactory;
+package bank.actorfactory.account;
 
-public class Checking  extends BankAccount{
+public class Saving extends BankAccount {
 
-    final double interestRate = 0.01;
+    final double interestRate = 0.0325;
     double balance;
+
+    public Saving(String email, String accountNumber) {
+        this.email = email;
+        this.accountNumber = accountNumber;
+        this.balance = 0;
+    }
 
     public void setBalance(double balance) {
         this.balance = balance;
@@ -21,11 +27,11 @@ public class Checking  extends BankAccount{
 
     @Override
     public String getId() {
-        return getAccountNumber();
+        return super.getAccountNumber();
     }
 
     @Override
     public String getEmail() {
-        return getEmail();
+        return super.getEmail();
     }
 }

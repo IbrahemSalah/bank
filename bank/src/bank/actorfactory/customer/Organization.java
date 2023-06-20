@@ -1,4 +1,4 @@
-package bank.actorfactory;
+package bank.actorfactory.customer;
 
 import finframework.actor.Customer;
 import finframework.actor.IAccount;
@@ -12,17 +12,15 @@ public class Organization extends Customer implements IOrganization {
 
     List<IAccount> accountList = new ArrayList<>();
     int numOfEmployees;
-    Customer customer;
 
     public  Organization(String name, String city, String state, String zip, String email, int numOfEmployees){
-        this.customer.setName(name);
-        this.customer.setCity(city);
-        this.customer.setState(state);
-        this.customer.setZip(zip);
-        this.customer.setEmail(email);
+        this.setName(name);
+        this.setCity(city);
+        this.setState(state);
+        this.setZip(zip);
+        this.setEmail(email);
         this.numOfEmployees = numOfEmployees;
     }
-
 
     @Override
     public void addAccount(IAccount iAccount) {

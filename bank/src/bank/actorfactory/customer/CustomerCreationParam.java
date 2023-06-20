@@ -1,11 +1,8 @@
-package finframework.actor;
+package bank.actorfactory.customer;
 
-import java.util.List;
+import java.util.Date;
 
-public abstract class Customer implements ICustomer {
-
-    private List<IAccount> accountList;
-
+public class CustomerCreationParam {
     private String name;
 
     private String street;
@@ -18,6 +15,20 @@ public abstract class Customer implements ICustomer {
 
     private String email;
 
+    private int numOfEmployees;
+
+    private String birthDate;
+
+    public CustomerCreationParam(String name, String street, String city, String state, String zip, String email, int numOfEmployees, String birthDate) {
+        this.name = name;
+        this.street = street;
+        this.city = city;
+        this.state = state;
+        this.zip = zip;
+        this.email = email;
+        this.numOfEmployees = numOfEmployees;
+        this.birthDate = birthDate;
+    }
 
     public String getName() {
         return name;
@@ -59,7 +70,6 @@ public abstract class Customer implements ICustomer {
         this.zip = zip;
     }
 
-    @Override
     public String getEmail() {
         return email;
     }
@@ -68,11 +78,19 @@ public abstract class Customer implements ICustomer {
         this.email = email;
     }
 
-    public void addAccount(IAccount iAccount) {
-        accountList.add(iAccount);
+    public int getNumOfEmployees() {
+        return numOfEmployees;
     }
 
-    public List<IAccount> getAccountList() {
-        return accountList;
+    public void setNumOfEmployees(int numOfEmployees) {
+        this.numOfEmployees = numOfEmployees;
+    }
+
+    public String getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(String birthDate) {
+        this.birthDate = birthDate;
     }
 }

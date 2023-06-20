@@ -2,8 +2,8 @@ package finframework.actorfactory;
 
 import finframework.actor.IAccount;
 
-public interface IAccountFactory {
+public interface IAccountFactory<T, E> {
 
-    IAccount createAccount();
+    IAccount createAccount(T t, E e);
 
 }

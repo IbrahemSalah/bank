@@ -8,5 +8,7 @@ public interface ICustomer {
 
     IAccount getAccount(String id);
 
+    String getEmail();
+
     List<IAccount> getAllAccounts();
 }

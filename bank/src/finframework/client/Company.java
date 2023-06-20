@@ -10,9 +10,9 @@ import java.util.Objects;
 
 public abstract class Company {
 
-    List<ICustomer> customerList;
-    ITransactionProxy iTransactionProxy;
-    HistoryFunctor historyFunctor;
+    protected List<ICustomer> customerList;
+    protected ITransactionProxy iTransactionProxy;
+    protected HistoryFunctor historyFunctor;
 
     public Company() {
         customerList = new ArrayList<>();

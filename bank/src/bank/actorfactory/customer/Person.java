@@ -1,25 +1,23 @@
-package bank.actorfactory;
+package bank.actorfactory.customer;
 
 import finframework.actor.Customer;
 import finframework.actor.IAccount;
 import finframework.actor.IPerson;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Person extends Customer implements IPerson {
 
     List<IAccount> accountList = new ArrayList<>();
-    Date birthDate;
-    Customer customer;
+    String birthDate;
 
-    public  Person(String name, String city, String state, String zip, String email, Date birthDate){
-        this.customer.setName(name);
-        this.customer.setCity(city);
-        this.customer.setState(state);
-        this.customer.setZip(zip);
-        this.customer.setEmail(email);
+    public Person(String name, String city, String state, String zip, String email, String birthDate) {
+        this.setName(name);
+        this.setCity(city);
+        this.setState(state);
+        this.setZip(zip);
+        this.setEmail(email);
         this.birthDate = birthDate;
     }
 

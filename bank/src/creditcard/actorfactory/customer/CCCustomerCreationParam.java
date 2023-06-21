@@ -120,19 +120,16 @@ public class CCCustomerCreationParam {
         this.accId = accId;
     }
 
-    public CCardAccountTypeEnum getBankAccountTypeEnum() {
-        return CCardAccountTypeEnum;
-    }
 
-    public void setBankAccountTypeEnum(CCardAccountTypeEnum CCardAccountTypeEnum) {
+    public void setCCardAccountTypeEnum(CCardAccountTypeEnum CCardAccountTypeEnum) {
         this.CCardAccountTypeEnum = CCardAccountTypeEnum;
     }
 
-    public CustomerTypeEnum getBankCustomerTypeEnum() {
+    public CustomerTypeEnum getCCardCustomerTypeEnum() {
         return customerTypeEnum;
     }
 
-    public void setBankCustomerTypeEnum(CustomerTypeEnum customerTypeEnum) {
+    public void setCCardCustomerTypeEnum(CustomerTypeEnum customerTypeEnum) {
         this.customerTypeEnum = customerTypeEnum;
     }
 
@@ -144,13 +141,10 @@ public class CCCustomerCreationParam {
         this.expirationDate = expirationDate;
     }
 
-    public creditcard.actorfactory.account.CCardAccountTypeEnum getCCardAccountTypeEnum() {
+    public CCardAccountTypeEnum getCCardAccountTypeEnum() {
         return CCardAccountTypeEnum;
     }
 
-    public void setCCardAccountTypeEnum(creditcard.actorfactory.account.CCardAccountTypeEnum CCardAccountTypeEnum) {
-        this.CCardAccountTypeEnum = CCardAccountTypeEnum;
-    }
 
     public CustomerTypeEnum getCustomerTypeEnum() {
         return customerTypeEnum;

@@ -8,14 +8,14 @@ public class ConcreteCCAccountFactory implements IAccountFactory<CCCustomerCreat
     @Override
     public IAccount createAccount(CCCustomerCreationParam params) {
 
-        if (params.getBankAccountTypeEnum() == CCardAccountTypeEnum.Gold) {
-            return new Gold(params.getEmail(), params.getAccId(), params.getBankCustomerTypeEnum());
-        } else if (params.getBankAccountTypeEnum() == CCardAccountTypeEnum.Silver) {
-            return new Silver(params.getEmail(), params.getAccId(), params.getBankCustomerTypeEnum());
-        } else if (params.getBankAccountTypeEnum() == CCardAccountTypeEnum.Copper) {
-            return new Copper(params.getEmail(), params.getAccId(), params.getBankCustomerTypeEnum());
+        if (params.getCCardAccountTypeEnum() == CCardAccountTypeEnum.Gold) {
+            return new Gold(params.getEmail(), params.getAccId(), params.getCCardCustomerTypeEnum());
+        } else if (params.getCCardAccountTypeEnum() == CCardAccountTypeEnum.Silver) {
+            return new Silver(params.getEmail(), params.getAccId(), params.getCCardCustomerTypeEnum());
+        } else if (params.getCCardAccountTypeEnum() == CCardAccountTypeEnum.Copper) {
+            return new Copper(params.getEmail(), params.getAccId(), params.getCCardCustomerTypeEnum());
         } else {
-            return new Silver(params.getEmail(), params.getAccId(), params.getBankCustomerTypeEnum());
+            return new Silver(params.getEmail(), params.getAccId(), params.getCCardCustomerTypeEnum());
         }
     }
 }

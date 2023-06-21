@@ -8,11 +8,11 @@ public class ConcreteCCCustomerFactory implements ICustomerFactory<CCCustomerCre
     @Override
     public ICustomer createCustomer(CCCustomerCreationParam CCCustomerCreationParam) {
         ICustomer  customer;
-        if (CCCustomerCreationParam.getBankCustomerTypeEnum() == CustomerTypeEnum.Personal) {
+        if (CCCustomerCreationParam.getCCardCustomerTypeEnum() == CustomerTypeEnum.Personal) {
 
             return   new Person(CCCustomerCreationParam.getName(), CCCustomerCreationParam.getCity(), CCCustomerCreationParam.getState(),
                     CCCustomerCreationParam.getZip(), CCCustomerCreationParam.getEmail(), CCCustomerCreationParam.getBirthDate());
-        } else if (CCCustomerCreationParam.getBankCustomerTypeEnum() == CustomerTypeEnum.Organization) {
+        } else if (CCCustomerCreationParam.getCCardCustomerTypeEnum() == CustomerTypeEnum.Organization) {
             return new Organization(CCCustomerCreationParam.getName(), CCCustomerCreationParam.getCity(), CCCustomerCreationParam.getState(),
                     CCCustomerCreationParam.getZip(), CCCustomerCreationParam.getEmail(), CCCustomerCreationParam.getNumOfEmployees());
         } else {

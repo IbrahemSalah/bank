@@ -33,6 +33,12 @@ public class Checking extends BankAccount {
     public String getId() {
         return super.getAccountNumber();
     }
+
+    @Override
+    public String getExpirationDate() {
+        return null;
+    }
+
     @Override
     public CustomerTypeEnum getCustomerAccountType() {
         return customerTypeEnum;

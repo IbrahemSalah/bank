@@ -35,6 +35,11 @@ public class Saving extends BankAccount {
         return super.getAccountNumber();
     }
 
+    @Override
+    public String getExpirationDate() {
+        return null;
+    }
+
 
     @Override
     public CustomerTypeEnum getCustomerAccountType() {

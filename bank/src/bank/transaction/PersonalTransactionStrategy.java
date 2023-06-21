@@ -5,7 +5,7 @@ import finframework.transaction.TransactionStrategy;
 
 public class PersonalTransactionStrategy extends TransactionStrategy {
     @Override
-    public IAccount moneyIn(IAccount account, int amount) {
+    public IAccount moneyIn(IAccount account, double amount) {
         account.setBalance(account.getBalance() + amount);
 
         if (amount > 400 || account.getBalance() < 0)
@@ -15,7 +15,7 @@ public class PersonalTransactionStrategy extends TransactionStrategy {
     }
 
     @Override
-    public IAccount moneyOut(IAccount account, int amount) {
+    public IAccount moneyOut(IAccount account, double amount) {
         account.setBalance(account.getBalance() - amount);
 
         if (amount > 400 || account.getBalance() < 0)

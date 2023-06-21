@@ -6,9 +6,9 @@ public class FunctorInputParam {
 
     private IAccount account;
 
-    private int amount;
+    private double amount;
 
-    public FunctorInputParam(IAccount account, int amount) {
+    public FunctorInputParam(IAccount account, double amount) {
         this.account = account;
         this.amount = amount;
     }
@@ -21,7 +21,7 @@ public class FunctorInputParam {
         this.account = account;
     }
 
-    public int getAmount() {
+    public double getAmount() {
         return amount;
     }
 

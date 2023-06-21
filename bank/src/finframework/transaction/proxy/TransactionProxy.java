@@ -9,7 +9,7 @@ public class TransactionProxy implements ITransactionProxy {
     protected TransactionStrategyManager transactionStrategyManager;
 
     @Override
-    public IAccount moneyIn(Function<FunctorInputParam, Integer> functor, IAccount account, int amount) {
+    public IAccount moneyIn(Function<FunctorInputParam, Double> functor, IAccount account, double amount) {
 
         IAccount result = transactionStrategyManager.moneyIn(account, amount);
         functor.apply(new FunctorInputParam(result, amount));
@@ -18,7 +18,7 @@ public class TransactionProxy implements ITransactionProxy {
     }
 
     @Override
-    public IAccount moneyOut(Function<FunctorInputParam, Integer> functor, IAccount account, int amount) {
+    public IAccount moneyOut(Function<FunctorInputParam, Double> functor, IAccount account, double amount) {
 
         IAccount result = transactionStrategyManager.moneyOut(account, amount);
         functor.apply(new FunctorInputParam(result, amount));

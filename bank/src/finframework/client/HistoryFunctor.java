@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 
-public class HistoryFunctor implements Function<FunctorInputParam, Integer> {
+public class HistoryFunctor implements Function<FunctorInputParam, Double> {
     List<FunctorInputParam> history;
 
 
@@ -14,7 +14,7 @@ public class HistoryFunctor implements Function<FunctorInputParam, Integer> {
         history = new ArrayList<>();
     }
     @Override
-    public Integer apply(FunctorInputParam functorInputParam) {
+    public Double apply(FunctorInputParam functorInputParam) {
         history.add(functorInputParam);
         return functorInputParam.getAmount();
     }

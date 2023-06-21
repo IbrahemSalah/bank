@@ -8,12 +8,12 @@ public abstract class TransactionStrategyManager {
 
     public abstract void setTransactionStrategy(IAccount account);
 
-    public IAccount moneyIn(IAccount account, int amount) {
+    public IAccount moneyIn(IAccount account, double amount) {
         setTransactionStrategy(account);
         return transactionStrategy.moneyIn(account, amount);
     }
 
-    public IAccount moneyOut(IAccount account, int amount) {
+    public IAccount moneyOut(IAccount account, double amount) {
         setTransactionStrategy(account);
         return transactionStrategy.moneyOut(account, amount);
     }

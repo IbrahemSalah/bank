@@ -14,6 +14,16 @@ public abstract class Customer implements ICustomer {
 
     private String email;
 
+    @Override
+    public String getExpirationDate() {
+        return expirationDate;
+    }
+
+    public void setExpirationDate(String expirationDate) {
+        this.expirationDate = expirationDate;
+    }
+
+    private String expirationDate;
 
     @Override
     public String getName() {
@@ -65,4 +75,6 @@ public abstract class Customer implements ICustomer {
     public void setEmail(String email) {
         this.email = email;
     }
+
+
 }

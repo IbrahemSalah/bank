@@ -10,11 +10,12 @@ public class Copper extends CCAccount {
 
     CustomerTypeEnum customerTypeEnum;
 
-    public Copper(String email, String accountNumber, CustomerTypeEnum customerTypeEnum) {
+    public Copper(String email, String accountNumber, CustomerTypeEnum customerTypeEnum,String expirationDate) {
         this.email = email;
         this.accountNumber = accountNumber;
         this.balance = 0;
         this.customerTypeEnum = customerTypeEnum;
+        this.expirationDate = expirationDate;
     }
 
     public void setBalance(double balance) {

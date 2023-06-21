@@ -13,11 +13,12 @@ public class Gold extends CCAccount {
     CustomerTypeEnum customerTypeEnum;
 
 
-    public Gold(String email, String accountNumber, CustomerTypeEnum bankAccountTypeEnum) {
+    public Gold(String email, String accountNumber, CustomerTypeEnum bankAccountTypeEnum,String expirationDate) {
         this.email = email;
         this.accountNumber = accountNumber;
         this.balance = 0;
         this.customerTypeEnum = bankAccountTypeEnum;
+        this.expirationDate = expirationDate;
     }
 
     public void setBalance(double balance) {

@@ -10,5 +10,6 @@ public interface ICustomer {
     List<IAccount> getAllAccounts();
     String getCity();
     String getName();
+    String getExpirationDate();
 
 }

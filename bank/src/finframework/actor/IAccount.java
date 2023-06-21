@@ -6,8 +6,10 @@ public interface IAccount {
     void setBalance(double balance);
     double addInterest();
     String getId();
-    String getEmail();
 
     String getExpirationDate();
+
+    String getEmail();
+
     CustomerTypeEnum getCustomerAccountType();
 }

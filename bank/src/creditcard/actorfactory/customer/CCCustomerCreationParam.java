@@ -22,6 +22,7 @@ public class CCCustomerCreationParam {
 
     private String accId;
 
+    String expirationDate;
 
     CCardAccountTypeEnum CCardAccountTypeEnum;
 
@@ -132,6 +133,30 @@ public class CCCustomerCreationParam {
     }
 
     public void setBankCustomerTypeEnum(CustomerTypeEnum customerTypeEnum) {
+        this.customerTypeEnum = customerTypeEnum;
+    }
+
+    public String getExpirationDate() {
+        return expirationDate;
+    }
+
+    public void setExpirationDate(String expirationDate) {
+        this.expirationDate = expirationDate;
+    }
+
+    public creditcard.actorfactory.account.CCardAccountTypeEnum getCCardAccountTypeEnum() {
+        return CCardAccountTypeEnum;
+    }
+
+    public void setCCardAccountTypeEnum(creditcard.actorfactory.account.CCardAccountTypeEnum CCardAccountTypeEnum) {
+        this.CCardAccountTypeEnum = CCardAccountTypeEnum;
+    }
+
+    public CustomerTypeEnum getCustomerTypeEnum() {
+        return customerTypeEnum;
+    }
+
+    public void setCustomerTypeEnum(CustomerTypeEnum customerTypeEnum) {
         this.customerTypeEnum = customerTypeEnum;
     }
 }

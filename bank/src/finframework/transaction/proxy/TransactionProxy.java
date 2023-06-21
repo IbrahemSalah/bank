@@ -4,24 +4,24 @@ import finframework.actor.IAccount;
 import finframework.transaction.TransactionStrategyManager;
 import java.util.function.Function;
 
-public class TransactionProxy implements ITransactionProxy {
+public class TransactionProxy<T> implements ITransactionProxy<T> {
 
     protected TransactionStrategyManager transactionStrategyManager;
 
     @Override
-    public IAccount moneyIn(Function<FunctorInputParam, Double> functor, IAccount account, double amount) {
+    public IAccount moneyIn(Function<T, Double> functor, T t, IAccount account, double amount) {
 
         IAccount result = transactionStrategyManager.moneyIn(account, amount);
-        functor.apply(new FunctorInputParam(result, amount));
+        functor.apply(t);
 
         return result;
     }
 
     @Override
-    public IAccount moneyOut(Function<FunctorInputParam, Double> functor, IAccount account, double amount) {
+    public IAccount moneyOut(Function<T, Double> functor, T t, IAccount account, double amount) {
 
         IAccount result = transactionStrategyManager.moneyOut(account, amount);
-        functor.apply(new FunctorInputParam(result, amount));
+        functor.apply(t);
 
         return result;
     }

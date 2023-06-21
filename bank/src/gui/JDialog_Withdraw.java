@@ -1,5 +1,7 @@
 package gui;
 
+import bank.transaction.proxy.TransactionType;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -85,7 +87,7 @@ public class JDialog_Withdraw extends JDialog
 
 	void JButtonOK_actionPerformed(java.awt.event.ActionEvent event)
 	{
-		parentframe.bankController.moneyOut(JTextField_NAME.getText().trim(), Integer.valueOf(JTextField_AMT.getText().trim()));
+		parentframe.bankController.moneyOut( TransactionType.Withdraw, JTextField_NAME.getText().trim(), Integer.valueOf(JTextField_AMT.getText().trim()));
 		dispose();
 	}
 

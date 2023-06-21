@@ -1,21 +1,19 @@
 package finframework.client;
 
-import finframework.transaction.proxy.FunctorInputParam;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 
-public class HistoryFunctor implements Function<FunctorInputParam, Double> {
-    List<FunctorInputParam> history;
+public class HistoryFunctor<T> implements Function<T, Double> {
+    List<T> history;
 
 
     public HistoryFunctor(){
-        history = new ArrayList<>();
+        history = new ArrayList<T>();
     }
     @Override
-    public Double apply(FunctorInputParam functorInputParam) {
+    public Double apply(T functorInputParam) {
         history.add(functorInputParam);
-        return functorInputParam.getAmount();
+        return 0.0;
     }
 }

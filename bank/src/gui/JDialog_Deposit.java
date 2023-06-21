@@ -1,5 +1,7 @@
 package gui;
 
+import bank.transaction.proxy.TransactionType;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -78,7 +80,7 @@ public class JDialog_Deposit extends JDialog {
 
     void JButtonOK_actionPerformed(java.awt.event.ActionEvent event) {
         parentframe.amountDeposit = JTextField_Deposit.getText();
-        parentframe.bankController.moneyIn(JTextField_NAME.getText().trim(), Integer.valueOf(JTextField_Deposit.getText().trim()));
+        parentframe.bankController.moneyIn(TransactionType.Deposit, JTextField_NAME.getText().trim(), Integer.valueOf(JTextField_Deposit.getText().trim()));
         dispose();
     }
 

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public abstract class Company<T> {
+public abstract class Company<T, E> {
 
     protected List<ICustomer> customerList;
     protected ITransactionProxy iTransactionProxy;
@@ -18,12 +18,12 @@ public abstract class Company<T> {
         customerList = new ArrayList<>();
     }
 
-    public void moneyIn(String accountNumber, double amount) {
-        iTransactionProxy.moneyIn(historyFunctor, getAccount(accountNumber), amount);
+    public void moneyIn(E e, String accountNumber, double amount) {
+        iTransactionProxy.moneyIn(historyFunctor, e, getAccount(accountNumber), amount);
     }
 
-    public void moneyOut(String accountNumber, double amount) {
-        iTransactionProxy.moneyOut(historyFunctor, getAccount(accountNumber), amount);
+    public void moneyOut(E e, String accountNumber, double amount) {
+        iTransactionProxy.moneyOut(historyFunctor, e, getAccount(accountNumber), amount);
     }
 
     public abstract void createCustomer(T t);

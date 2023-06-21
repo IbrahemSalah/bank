@@ -4,9 +4,9 @@ import finframework.actor.IAccount;
 
 import java.util.function.Function;
 
-public interface ITransactionProxy {
+public interface ITransactionProxy<T> {
 
-    IAccount moneyIn(Function<FunctorInputParam, Double> functor, IAccount account, double amount);
+    IAccount moneyIn(Function<T, Double> functor, T t, IAccount account, double amount);
 
-    IAccount moneyOut(Function<FunctorInputParam, Double> functor, IAccount account, double amount);
+    IAccount moneyOut(Function<T, Double> functor, T t, IAccount account, double amount);
 }

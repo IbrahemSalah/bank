@@ -11,9 +11,9 @@ import java.util.List;
 public class Organization extends Customer implements IOrganization {
 
     List<IAccount> accountList = new ArrayList<>();
-    int numOfEmployees;
+    String numOfEmployees;
 
-    public  Organization(String name, String city, String state, String zip, String email, int numOfEmployees){
+    public  Organization(String name, String city, String state, String zip, String email, String numOfEmployees){
         this.setName(name);
         this.setCity(city);
         this.setState(state);

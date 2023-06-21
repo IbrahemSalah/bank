@@ -17,7 +17,7 @@ public class CustomerCreationParam {
 
     private String email;
 
-    private int numOfEmployees;
+    private String numOfEmployees;
 
     private String birthDate;
 
@@ -29,7 +29,7 @@ public class CustomerCreationParam {
     BankCustomerTypeEnum bankCustomerTypeEnum;
 
 
-    public CustomerCreationParam(String name, String street, String city, String state, String zip, String email, int numOfEmployees, String birthDate, String accId
+    public CustomerCreationParam(String name, String street, String city, String state, String zip, String email, String numOfEmployees, String birthDate, String accId
     , BankAccountTypeEnum bankAccountTypeEnum, BankCustomerTypeEnum bankCustomerTypeEnum) {
         this.name = name;
         this.street = street;
@@ -96,11 +96,11 @@ public class CustomerCreationParam {
         this.email = email;
     }
 
-    public int getNumOfEmployees() {
+    public String getNumOfEmployees() {
         return numOfEmployees;
     }
 
-    public void setNumOfEmployees(int numOfEmployees) {
+    public void setNumOfEmployees(String numOfEmployees) {
         this.numOfEmployees = numOfEmployees;
     }
 

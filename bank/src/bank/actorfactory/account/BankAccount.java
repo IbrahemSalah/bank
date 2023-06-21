@@ -7,6 +7,8 @@ public abstract class BankAccount implements IAccount {
     String email;
     String accountNumber;
 
+    BankAccountTypeEnum bankAccountTypeEnum;
+
     @Override
     public String getEmail() {
         return email;
@@ -24,5 +26,8 @@ public abstract class BankAccount implements IAccount {
         this.accountNumber = accountNumber;
     }
 
-
+    @Override
+    public BankAccountTypeEnum getType() {
+        return bankAccountTypeEnum;
+    }
 }

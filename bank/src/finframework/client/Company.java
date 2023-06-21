@@ -18,11 +18,11 @@ public abstract class Company<T> {
         customerList = new ArrayList<>();
     }
 
-    public void moneyIn(String accountNumber, int amount) {
+    public void moneyIn(String accountNumber, double amount) {
         iTransactionProxy.moneyIn(historyFunctor, getAccount(accountNumber), amount);
     }
 
-    public void moneyOut(String accountNumber, int amount) {
+    public void moneyOut(String accountNumber, double amount) {
         iTransactionProxy.moneyOut(historyFunctor, getAccount(accountNumber), amount);
     }
 

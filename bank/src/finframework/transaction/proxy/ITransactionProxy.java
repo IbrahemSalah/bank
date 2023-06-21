@@ -6,7 +6,7 @@ import java.util.function.Function;
 
 public interface ITransactionProxy {
 
-    IAccount moneyIn(Function<FunctorInputParam, Integer> functor, IAccount account, int amount);
+    IAccount moneyIn(Function<FunctorInputParam, Double> functor, IAccount account, double amount);
 
-    IAccount moneyOut(Function<FunctorInputParam, Integer> functor, IAccount account, int amount);
+    IAccount moneyOut(Function<FunctorInputParam, Double> functor, IAccount account, double amount);
 }

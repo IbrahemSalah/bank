@@ -323,7 +323,9 @@ public class BankFrm extends JFrame
 	
 	void JButtonAddinterest_actionPerformed(ActionEvent event)
 	{
+		bankController.addInterest();
+		RefreshData();
 		  JOptionPane.showMessageDialog(JButton_Addinterest, "Add interest to all accounts","Add interest to all accounts",JOptionPane.WARNING_MESSAGE);
-	    
+
 	}
 }

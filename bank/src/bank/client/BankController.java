@@ -12,6 +12,7 @@ import finframework.client.Company;
 import finframework.client.HistoryFunctor;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class BankController extends Company<CustomerCreationParam> {
@@ -36,17 +37,22 @@ public class BankController extends Company<CustomerCreationParam> {
     }
 
     @Override
-    public void moneyIn(String accountNumber, int amount) {
+    public void moneyIn(String accountNumber, double amount) {
         iTransactionProxy.moneyIn(historyFunctor, getAccount(accountNumber), amount);
     }
 
     @Override
-    public void moneyOut(String accountNumber, int amount) {
+    public void moneyOut(String accountNumber, double amount) {
         iTransactionProxy.moneyOut(historyFunctor, getAccount(accountNumber), amount);
     }
 
     @Override
     public void addInterest() {
+        for (ICustomer customer : customerList) {
+            for (IAccount account : customer.getAllAccounts()) {
+                moneyIn(account.getId(), account.addInterest());
+            }
+        }
 
     }
     public List< String[]>  getAllAccounts() {

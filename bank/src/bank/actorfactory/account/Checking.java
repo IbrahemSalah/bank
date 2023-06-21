@@ -5,11 +5,15 @@ public class Checking extends BankAccount {
     final double interestRate = 0.01;
     double balance;
 
-    public Checking(String email, String accountNumber) {
+    BankAccountTypeEnum bankAccountTypeEnum;
+
+    public Checking(String email, String accountNumber, BankAccountTypeEnum bankAccountTypeEnum) {
         this.email = email;
         this.accountNumber = accountNumber;
         this.balance = 0;
+        this.bankAccountTypeEnum = bankAccountTypeEnum;
     }
+
     public void setBalance(double balance) {
         this.balance = balance;
     }
@@ -32,5 +36,10 @@ public class Checking extends BankAccount {
     @Override
     public String getEmail() {
         return getEmail();
+    }
+
+    @Override
+    public BankAccountTypeEnum getType() {
+        return bankAccountTypeEnum;
     }
 }

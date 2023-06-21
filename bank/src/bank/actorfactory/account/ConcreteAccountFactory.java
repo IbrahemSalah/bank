@@ -9,11 +9,11 @@ public class ConcreteAccountFactory implements IAccountFactory<CustomerCreationP
     public IAccount createAccount( CustomerCreationParam params) {
 
         if (params.getBankAccountTypeEnum() == BankAccountTypeEnum.Saving) {
-            return new Saving(params.getEmail(), params.getAccId());
+            return new Saving(params.getEmail(), params.getAccId(),params.getBankAccountTypeEnum());
         } else if (params.getBankAccountTypeEnum() == BankAccountTypeEnum.Checking) {
-            return new Checking(params.getEmail(), params.getAccId());
+            return new Checking(params.getEmail(), params.getAccId(),params.getBankAccountTypeEnum());
         } else {
-            return new Saving(params.getEmail(), params.getAccId());
+            return new Saving(params.getEmail(), params.getAccId(),params.getBankAccountTypeEnum());
         }
     }
 }

@@ -12,17 +12,17 @@ import bank.transaction.proxy.TransactionType;
 import finframework.actor.IAccount;
 import finframework.actor.ICustomer;
 import finframework.client.Company;
-import finframework.client.HistoryFunctor;
+
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BankController extends Company<CustomerCreationParam, TransactionType> {
+public class Bank extends Company<CustomerCreationParam, TransactionType> {
     ConcreteCustomerFactory concreteCustomerFactory = new ConcreteCustomerFactory();
     ConcreteAccountFactory concreteAccountFactory = new ConcreteAccountFactory();
 
 
-    public BankController() {
+    public Bank() {
         iTransactionProxy = new BankTransactionProxy();
         historyFunctor = new BankHistoryFunctor();
     }

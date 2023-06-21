@@ -1,6 +1,7 @@
 package gui;
 
-import bank.client.BankController;
+import bank.client.controller.BankController;
+import finframework.controller.Controller;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -18,7 +19,7 @@ public class BankFrm extends JFrame
      * init variables in the object
      ****/
     String accountnr, clientName,street,city,zip,state,accountType,clientType,amountDeposit;
-	BankController bankController = new BankController();
+	Controller bankController = new BankController();
 
     boolean newaccount;
     private DefaultTableModel model;

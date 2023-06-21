@@ -29,17 +29,10 @@ public class Checking extends BankAccount {
     public double addInterest() {
         return balance * interestRate;
     }
-
     @Override
     public String getId() {
         return super.getAccountNumber();
     }
-
-    @Override
-    public String getEmail() {
-        return super.getEmail();
-    }
-
     @Override
     public BankCustomerTypeEnum getCustomerAccountType() {
         return bankCustomerTypeEnum;

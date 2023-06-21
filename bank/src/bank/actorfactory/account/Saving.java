@@ -35,10 +35,6 @@ public class Saving extends BankAccount {
         return super.getAccountNumber();
     }
 
-    @Override
-    public String getEmail() {
-        return super.getEmail();
-    }
 
     @Override
     public BankCustomerTypeEnum getCustomerAccountType() {

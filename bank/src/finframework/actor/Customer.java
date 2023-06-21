@@ -5,8 +5,6 @@ import java.util.List;
 
 public abstract class Customer implements ICustomer {
 
-    private List<IAccount> accountList;
-
     private String name;
 
     private String street;

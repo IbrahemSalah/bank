@@ -12,6 +12,8 @@ import bank.transaction.proxy.TransactionType;
 import finframework.actor.IAccount;
 import finframework.actor.ICustomer;
 import finframework.client.Company;
+import finframework.client.HistoryFunctor;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,7 +67,7 @@ public class BankController extends Company<CustomerCreationParam, TransactionTy
                 String cusType = ((customer.getClass() == Person.class) ? "P" : "C");
                 String accType = ((account.getClass() == Checking.class) ? "Ch" : "S");
                 customerData = new String[]{account.getId(), customer.getName(), customer.getCity(),
-                        cusType, accType, String.valueOf(account.getBalance())};
+                        cusType,accType, String.valueOf( new DecimalFormat("0.00").format(account.getBalance()))};
                 data.add(customerData);
             }
         }

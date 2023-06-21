@@ -2,10 +2,9 @@
 		A basic implementation of the JDialog class.
 */
 package gui.ccard;
-import gui.ccard.CardFrm;
-
-import java.awt.*;
-import javax.swing.*;
+import creditcard.actorfactory.account.CCardAccountTypeEnum;
+import creditcard.actorfactory.customer.CCCustomerCreationParam;
+import finframework.actor.CustomerTypeEnum;
 
 public class JDialog_AddCCAccount extends javax.swing.JDialog
 {
@@ -188,23 +187,47 @@ public class JDialog_AddCCAccount extends javax.swing.JDialog
 
 	void JButtonOK_actionPerformed(java.awt.event.ActionEvent event)
 	{
-       parentframe.clientName=JTextField_NAME.getText();
-       parentframe.street=JTextField_STR.getText();
-       parentframe.city=JTextField_CT.getText();
-       parentframe.zip=JTextField_ZIP.getText();
-       parentframe.state=JTextField_ST.getText();
-       parentframe.ccnumber=JTextField_CCNR.getText();
-       parentframe.expdate=JTextField_ExpDate.getText();
-       if (JRadioButton_Gold.isSelected())
-           parentframe.accountType="Gold";
-           else{
-            if (JRadioButton_Silver.isSelected())
-                parentframe.accountType="Silver";
-                else
-                parentframe.accountType="Bronze";
-           }
-           
-	   parentframe.newaccount=true;
+		CCCustomerCreationParam customerCreationParam = new CCCustomerCreationParam();
+		customerCreationParam.setCCardCustomerTypeEnum(CustomerTypeEnum.Personal);
+		customerCreationParam.setAccId(JTextField_CCNR.getText());
+		customerCreationParam.setName(JTextField_NAME.getText());
+		customerCreationParam.setStreet(JTextField_STR.getText());
+		customerCreationParam.setCity(JTextField_CT.getText());
+		customerCreationParam.setZip(JTextField_ZIP.getText());
+		customerCreationParam.setEmail(JTextField_Email.getText());
+		customerCreationParam.setExpirationDate(JTextField_ExpDate.getText());
+
+		if (JRadioButton_Gold.isSelected())
+			customerCreationParam.setCCardAccountTypeEnum(CCardAccountTypeEnum.Gold);
+
+		else {
+			if (JRadioButton_Silver.isSelected())
+				customerCreationParam.setCCardAccountTypeEnum(CCardAccountTypeEnum.Silver);
+			else
+				customerCreationParam.setCCardAccountTypeEnum(CCardAccountTypeEnum.Copper);
+
+
+		}
+
+		parentframe.cCardController.createCustomer(customerCreationParam);
+
+//       parentframe.clientName=JTextField_NAME.getText();
+//       parentframe.street=JTextField_STR.getText();
+//       parentframe.city=JTextField_CT.getText();
+//       parentframe.zip=JTextField_ZIP.getText();
+//       parentframe.state=JTextField_ST.getText();
+//       parentframe.ccnumber=JTextField_CCNR.getText();
+//       parentframe.expdate=JTextField_ExpDate.getText();
+//       if (JRadioButton_Gold.isSelected())
+//           parentframe.accountType="Gold";
+//           else{
+//            if (JRadioButton_Silver.isSelected())
+//                parentframe.accountType="Silver";
+//                else
+//                parentframe.accountType="Bronze";
+//           }
+//
+//	   parentframe.newaccount=true;
        dispose();
 	}
 

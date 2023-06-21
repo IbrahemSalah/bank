@@ -1,4 +1,5 @@
 package gui.ccard;
+import creditcard.transaction.proxy.CCardTransactionType;
 import gui.ccard.CardFrm;
 
 import java.awt.*;
@@ -85,7 +86,10 @@ public class JDialog_Deposit extends javax.swing.JDialog
 	void JButtonOK_actionPerformed(java.awt.event.ActionEvent event)
 	{
         parentframe.amountDeposit=JTextField_Deposit.getText();
-        dispose();
+
+		parentframe.cCardController.moneyOut( CCardTransactionType.Deposit, JTextField_NAME.getText().trim(), Integer.valueOf(JTextField_Deposit.getText().trim()));
+
+		dispose();
 	}
 
 	void JButtonCalcel_actionPerformed(java.awt.event.ActionEvent event)

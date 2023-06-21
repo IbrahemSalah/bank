@@ -1,4 +1,5 @@
 package gui.ccard;
+import creditcard.transaction.proxy.CCardTransactionType;
 import gui.ccard.CardFrm;
 
 import java.awt.*;
@@ -86,7 +87,7 @@ public class JDialog_Withdraw extends javax.swing.JDialog
 
 	void JButtonOK_actionPerformed(java.awt.event.ActionEvent event)
 	{
-        parentframe.amountDeposit=JTextField_AMT.getText();
+		parentframe.cCardController.moneyIn( CCardTransactionType.Charge, JTextField_NAME.getText().trim(), Integer.valueOf(JTextField_AMT.getText().trim()));
 		dispose();
 	}
 

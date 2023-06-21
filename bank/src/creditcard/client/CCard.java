@@ -2,6 +2,8 @@ package creditcard.client;
 
 import creditcard.actorfactory.account.Copper;
 import creditcard.actorfactory.account.ConcreteCCAccountFactory;
+import creditcard.actorfactory.account.Gold;
+import creditcard.actorfactory.account.Silver;
 import creditcard.actorfactory.customer.ConcreteCCCustomerFactory;
 import creditcard.actorfactory.customer.CCCustomerCreationParam;
 import creditcard.actorfactory.customer.Person;
@@ -61,13 +63,17 @@ public class CCard extends Company<CCCustomerCreationParam, CCardTransactionType
     public List<String[]> getAllAccounts() {
         List<String[]> data = new ArrayList<>();
         for (ICustomer customer : customerList) {
-            String[] customerData = new String[6];
+            String[] customerData = new String[5];
             for (IAccount account : customer.getAllAccounts()) {
-
-                String cusType = ((customer.getClass() == Person.class) ? "P" : "C");
-                String accType = ((account.getClass() == Copper.class) ? "Ch" : "S");
-                customerData = new String[]{account.getId(), customer.getName(), customer.getCity(),
-                        cusType,accType, String.valueOf( new DecimalFormat("0.00").format(account.getBalance()))};
+                String accType = "";
+                if (account.getClass() == Gold.class)
+                    accType = "Gold";
+                else if (account.getClass() == Silver.class)
+                    accType = "Silver";
+                else if (account.getClass() == Copper.class)
+                    accType = "Copper";
+                customerData = new String[]{ customer.getName(), account.getId(),account.getExpirationDate(),
+                        accType, String.valueOf(new DecimalFormat("0.00").format(account.getBalance()))};
                 data.add(customerData);
             }
         }

@@ -1,6 +1,6 @@
 package gui.bank;
 import bank.actorfactory.account.BankAccountTypeEnum;
-import bank.actorfactory.customer.BankCustomerTypeEnum;
+import finframework.actor.CustomerTypeEnum;
 import bank.actorfactory.customer.CustomerCreationParam;
 
 import javax.swing.*;
@@ -141,7 +141,7 @@ public class JDialog_AddCompAcc extends JDialog
 	void JButtonOK_actionPerformed(java.awt.event.ActionEvent event) {
 
 		CustomerCreationParam customerCreationParam = new CustomerCreationParam();
-		customerCreationParam.setBankCustomerTypeEnum(BankCustomerTypeEnum.Organization);
+		customerCreationParam.setBankCustomerTypeEnum(CustomerTypeEnum.Organization);
 		customerCreationParam.setAccId(JTextField_ACNR.getText());
 		customerCreationParam.setName(JTextField_NAME.getText());
 		customerCreationParam.setStreet(JTextField_STR.getText());

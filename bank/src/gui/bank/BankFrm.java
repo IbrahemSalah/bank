@@ -1,6 +1,6 @@
 package gui.bank;
 
-import bank.client.controller.BankController;
+import bank.controller.BankController;
 import finframework.controller.Controller;
 
 import javax.swing.*;

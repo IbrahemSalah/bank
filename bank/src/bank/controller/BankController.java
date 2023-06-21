@@ -1,4 +1,4 @@
-package bank.client.controller;
+package bank.controller;
 
 import bank.actorfactory.customer.CustomerCreationParam;
 import bank.client.Bank;

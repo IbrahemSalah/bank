@@ -1,19 +1,19 @@
 package bank.actorfactory.account;
 
-import bank.actorfactory.customer.BankCustomerTypeEnum;
+import finframework.actor.CustomerTypeEnum;
 
 public class Saving extends BankAccount {
 
     final double interestRate = 0.0325;
     double balance;
 
-    BankCustomerTypeEnum bankCustomerTypeEnum;
+    CustomerTypeEnum customerTypeEnum;
 
-    public Saving(String email, String accountNumber, BankCustomerTypeEnum bankAccountTypeEnum) {
+    public Saving(String email, String accountNumber, CustomerTypeEnum bankAccountTypeEnum) {
         this.email = email;
         this.accountNumber = accountNumber;
         this.balance = 0;
-        this.bankCustomerTypeEnum = bankAccountTypeEnum;
+        this.customerTypeEnum = bankAccountTypeEnum;
     }
 
     public void setBalance(double balance) {
@@ -37,7 +37,7 @@ public class Saving extends BankAccount {
 
 
     @Override
-    public BankCustomerTypeEnum getCustomerAccountType() {
-        return bankCustomerTypeEnum;
+    public CustomerTypeEnum getCustomerAccountType() {
+        return customerTypeEnum;
     }
 }

@@ -1,6 +1,5 @@
 package finframework.actor;
 
-import bank.actorfactory.customer.BankCustomerTypeEnum;
 
 public interface IAccount {
     double getBalance();
@@ -9,5 +8,5 @@ public interface IAccount {
     String getId();
     String getEmail();
 
-    BankCustomerTypeEnum getCustomerAccountType();
+    CustomerTypeEnum getCustomerAccountType();
 }

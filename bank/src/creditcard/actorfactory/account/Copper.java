@@ -1,15 +1,16 @@
-package bank.actorfactory.account;
+package creditcard.actorfactory.account;
 
 import finframework.actor.CustomerTypeEnum;
 
-public class Checking extends BankAccount {
+public class Copper extends CCAccount {
 
-    final double interestRate = 0.01;
+    final double interestRate = 0.2;
+    final double minPayment = 0.24;
     double balance;
 
     CustomerTypeEnum customerTypeEnum;
 
-    public Checking(String email, String accountNumber, CustomerTypeEnum customerTypeEnum) {
+    public Copper(String email, String accountNumber, CustomerTypeEnum customerTypeEnum) {
         this.email = email;
         this.accountNumber = accountNumber;
         this.balance = 0;

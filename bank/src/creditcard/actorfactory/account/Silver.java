@@ -1,19 +1,21 @@
-package bank.actorfactory.account;
+package creditcard.actorfactory.account;
 
 import finframework.actor.CustomerTypeEnum;
 
-public class Checking extends BankAccount {
+public class Silver extends CCAccount {
 
-    final double interestRate = 0.01;
+    final double interestRate = 0.16;
+    final double minPayment = 0.18;
+
     double balance;
 
     CustomerTypeEnum customerTypeEnum;
 
-    public Checking(String email, String accountNumber, CustomerTypeEnum customerTypeEnum) {
+    public Silver(String email, String accountNumber, CustomerTypeEnum bankAccountTypeEnum) {
         this.email = email;
         this.accountNumber = accountNumber;
         this.balance = 0;
-        this.customerTypeEnum = customerTypeEnum;
+        this.customerTypeEnum = bankAccountTypeEnum;
     }
 
     public void setBalance(double balance) {
@@ -29,10 +31,13 @@ public class Checking extends BankAccount {
     public double addInterest() {
         return balance * interestRate;
     }
+
     @Override
     public String getId() {
         return super.getAccountNumber();
     }
+
+
     @Override
     public CustomerTypeEnum getCustomerAccountType() {
         return customerTypeEnum;

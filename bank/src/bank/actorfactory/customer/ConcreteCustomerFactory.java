@@ -1,5 +1,6 @@
 package bank.actorfactory.customer;
 
+import finframework.actor.CustomerTypeEnum;
 import finframework.actor.ICustomer;
 import finframework.actorfactory.ICustomerFactory;
 
@@ -7,11 +8,11 @@ public class ConcreteCustomerFactory implements ICustomerFactory<CustomerCreatio
     @Override
     public ICustomer createCustomer(CustomerCreationParam customerCreationParam) {
         ICustomer  customer;
-        if (customerCreationParam.getBankCustomerTypeEnum() == BankCustomerTypeEnum.Personal) {
+        if (customerCreationParam.getBankCustomerTypeEnum() == CustomerTypeEnum.Personal) {
 
             return   new Person(customerCreationParam.getName(), customerCreationParam.getCity(), customerCreationParam.getState(),
                     customerCreationParam.getZip(), customerCreationParam.getEmail(), customerCreationParam.getBirthDate());
-        } else if (customerCreationParam.getBankCustomerTypeEnum() == BankCustomerTypeEnum.Organization) {
+        } else if (customerCreationParam.getBankCustomerTypeEnum() == CustomerTypeEnum.Organization) {
             return new Organization(customerCreationParam.getName(), customerCreationParam.getCity(), customerCreationParam.getState(),
                     customerCreationParam.getZip(), customerCreationParam.getEmail(), customerCreationParam.getNumOfEmployees());
         } else {

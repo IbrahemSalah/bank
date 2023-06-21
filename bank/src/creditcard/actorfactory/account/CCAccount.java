@@ -1,9 +1,9 @@
-package bank.actorfactory.account;
+package creditcard.actorfactory.account;
 
 import finframework.actor.CustomerTypeEnum;
 import finframework.actor.IAccount;
 
-public abstract class BankAccount implements IAccount {
+public abstract class CCAccount implements IAccount {
 
     String email;
     String accountNumber;

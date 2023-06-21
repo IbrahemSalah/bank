@@ -1,9 +1,9 @@
-package bank.actorfactory.customer;
+package creditcard.actorfactory.customer;
 
-import bank.actorfactory.account.BankAccountTypeEnum;
+import creditcard.actorfactory.account.BankAccountTypeEnum;
 import finframework.actor.CustomerTypeEnum;
 
-public class CustomerCreationParam {
+public class CCCustomerCreationParam {
     private String name;
 
     private String street;
@@ -28,7 +28,7 @@ public class CustomerCreationParam {
     CustomerTypeEnum customerTypeEnum;
 
 
-    public CustomerCreationParam(String name, String street, String city, String state, String zip, String email, String numOfEmployees, String birthDate, String accId
+    public CCCustomerCreationParam(String name, String street, String city, String state, String zip, String email, String numOfEmployees, String birthDate, String accId
     , BankAccountTypeEnum bankAccountTypeEnum, CustomerTypeEnum customerTypeEnum) {
         this.name = name;
         this.street = street;
@@ -43,7 +43,7 @@ public class CustomerCreationParam {
         this.customerTypeEnum = customerTypeEnum;
     }
 
-    public CustomerCreationParam() {
+    public CCCustomerCreationParam() {
 
     }
 

@@ -1,5 +1,6 @@
 package finframework.actor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Customer implements ICustomer {
@@ -68,13 +69,5 @@ public abstract class Customer implements ICustomer {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public void addAccount(IAccount iAccount) {
-        accountList.add(iAccount);
-    }
-
-    public List<IAccount> getAccountList() {
-        return accountList;
     }
 }

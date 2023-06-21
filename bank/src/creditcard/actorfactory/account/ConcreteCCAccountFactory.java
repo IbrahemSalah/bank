@@ -8,9 +8,11 @@ public class ConcreteCCAccountFactory implements IAccountFactory<CCCustomerCreat
     @Override
     public IAccount createAccount(CCCustomerCreationParam params) {
 
-        if (params.getBankAccountTypeEnum() == BankAccountTypeEnum.Saving) {
+        if (params.getBankAccountTypeEnum() == CCardAccountTypeEnum.Gold) {
+            return new Gold(params.getEmail(), params.getAccId(), params.getBankCustomerTypeEnum());
+        } else if (params.getBankAccountTypeEnum() == CCardAccountTypeEnum.Silver) {
             return new Silver(params.getEmail(), params.getAccId(), params.getBankCustomerTypeEnum());
-        } else if (params.getBankAccountTypeEnum() == BankAccountTypeEnum.Checking) {
+        } else if (params.getBankAccountTypeEnum() == CCardAccountTypeEnum.Copper) {
             return new Copper(params.getEmail(), params.getAccId(), params.getBankCustomerTypeEnum());
         } else {
             return new Silver(params.getEmail(), params.getAccId(), params.getBankCustomerTypeEnum());

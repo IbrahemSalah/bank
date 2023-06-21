@@ -1,8 +1,5 @@
 package finframework.actor;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public abstract class Customer implements ICustomer {
 
     private String name;

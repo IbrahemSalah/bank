@@ -7,8 +7,24 @@ public abstract class CCAccount implements IAccount {
 
     String email;
     String accountNumber;
-
     CustomerTypeEnum customerTypeEnum;
+    String expirationDate;
+
+    public CustomerTypeEnum getCustomerTypeEnum() {
+        return customerTypeEnum;
+    }
+
+    public void setCustomerTypeEnum(CustomerTypeEnum customerTypeEnum) {
+        this.customerTypeEnum = customerTypeEnum;
+    }
+
+    public String getExpirationDate() {
+        return expirationDate;
+    }
+
+    public void setExpirationDate(String expirationDate) {
+        this.expirationDate = expirationDate;
+    }
 
     @Override
     public String getEmail() {

@@ -1,6 +1,6 @@
 package creditcard.actorfactory.customer;
 
-import creditcard.actorfactory.account.BankAccountTypeEnum;
+import creditcard.actorfactory.account.CCardAccountTypeEnum;
 import finframework.actor.CustomerTypeEnum;
 
 public class CCCustomerCreationParam {
@@ -23,13 +23,13 @@ public class CCCustomerCreationParam {
     private String accId;
 
 
-    BankAccountTypeEnum bankAccountTypeEnum;
+    CCardAccountTypeEnum CCardAccountTypeEnum;
 
     CustomerTypeEnum customerTypeEnum;
 
 
     public CCCustomerCreationParam(String name, String street, String city, String state, String zip, String email, String numOfEmployees, String birthDate, String accId
-    , BankAccountTypeEnum bankAccountTypeEnum, CustomerTypeEnum customerTypeEnum) {
+    , CCardAccountTypeEnum CCardAccountTypeEnum, CustomerTypeEnum customerTypeEnum) {
         this.name = name;
         this.street = street;
         this.city = city;
@@ -39,7 +39,7 @@ public class CCCustomerCreationParam {
         this.numOfEmployees = numOfEmployees;
         this.birthDate = birthDate;
         this.accId =accId;
-        this.bankAccountTypeEnum = bankAccountTypeEnum;
+        this.CCardAccountTypeEnum = CCardAccountTypeEnum;
         this.customerTypeEnum = customerTypeEnum;
     }
 
@@ -119,12 +119,12 @@ public class CCCustomerCreationParam {
         this.accId = accId;
     }
 
-    public BankAccountTypeEnum getBankAccountTypeEnum() {
-        return bankAccountTypeEnum;
+    public CCardAccountTypeEnum getBankAccountTypeEnum() {
+        return CCardAccountTypeEnum;
     }
 
-    public void setBankAccountTypeEnum(BankAccountTypeEnum bankAccountTypeEnum) {
-        this.bankAccountTypeEnum = bankAccountTypeEnum;
+    public void setBankAccountTypeEnum(CCardAccountTypeEnum CCardAccountTypeEnum) {
+        this.CCardAccountTypeEnum = CCardAccountTypeEnum;
     }
 
     public CustomerTypeEnum getBankCustomerTypeEnum() {

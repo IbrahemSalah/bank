@@ -1,4 +1,4 @@
-package gui;
+package gui.bank;
 
 import bank.transaction.proxy.TransactionType;
 

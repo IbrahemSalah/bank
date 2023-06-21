@@ -1,4 +1,4 @@
-package gui;
+package gui.bank;
 
 /**
 		A basic implementation of the JDialog class.

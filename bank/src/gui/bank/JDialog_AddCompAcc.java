@@ -1,4 +1,4 @@
-package gui;
+package gui.bank;
 import bank.actorfactory.account.BankAccountTypeEnum;
 import bank.actorfactory.customer.BankCustomerTypeEnum;
 import bank.actorfactory.customer.CustomerCreationParam;

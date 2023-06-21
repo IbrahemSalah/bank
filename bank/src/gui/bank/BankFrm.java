@@ -1,4 +1,4 @@
-package gui;
+package gui.bank;
 
 import bank.client.controller.BankController;
 import finframework.controller.Controller;

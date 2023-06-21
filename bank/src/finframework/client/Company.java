@@ -1,6 +1,5 @@
 package finframework.client;
 
-import bank.actorfactory.customer.CustomerCreationParam;
 import finframework.actor.IAccount;
 import finframework.actor.ICustomer;
 import finframework.transaction.proxy.ITransactionProxy;
@@ -29,23 +28,30 @@ public abstract class Company<T> {
 
     public abstract void createCustomer(T t);
 
-
-    public abstract void createAccount();
-
     public abstract void addInterest();
 
     public IAccount getAccount(String accountNumber) {
 
-        final IAccount[] result = new IAccount[1];
+        IAccount result = null;
+        int index = 0;
 
-        customerList.forEach(iCustomer -> {
-            result[0] = iCustomer.getAllAccounts().stream().filter(account -> Objects.equals(account.getId(), accountNumber)).toList().get(0);
-        });
+        while (result == null && index < customerList.size()) {
+            ICustomer iCustomer = customerList.get(index);
 
-        return result[0];
+            for (IAccount account : iCustomer.getAllAccounts()) {
+                if (accountNumber.equals(account.getId())) {
+                    result = account;
+                    break;
+                }
+            }
+            index++;
+        }
+        ;
+
+        return result;
     }
 
-    public List<ICustomer> generateReport(){
+    public List<ICustomer> generateReport() {
         return customerList;
     }
 }

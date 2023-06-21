@@ -1,19 +1,12 @@
 package finframework.transaction.proxy;
 
 import finframework.actor.IAccount;
-import finframework.transaction.TransactionStrategy;
 import finframework.transaction.TransactionStrategyManager;
-
-import java.util.List;
 import java.util.function.Function;
 
 public class TransactionProxy implements ITransactionProxy {
 
-    TransactionStrategyManager transactionStrategyManager;
-
-    public TransactionProxy(TransactionStrategyManager transactionStrategyManager) {
-        this.transactionStrategyManager = transactionStrategyManager;
-    }
+    protected TransactionStrategyManager transactionStrategyManager;
 
     @Override
     public IAccount moneyIn(Function<FunctorInputParam, Integer> functor, IAccount account, int amount) {

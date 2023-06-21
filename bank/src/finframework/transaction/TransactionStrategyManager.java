@@ -4,7 +4,7 @@ import finframework.actor.IAccount;
 
 public abstract class TransactionStrategyManager {
 
-    TransactionStrategy transactionStrategy;
+    protected TransactionStrategy transactionStrategy;
 
     public abstract void setTransactionStrategy(IAccount account);
 

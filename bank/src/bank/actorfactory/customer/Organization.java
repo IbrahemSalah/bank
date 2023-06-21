@@ -29,7 +29,7 @@ public class Organization extends Customer implements IOrganization {
 
     @Override
     public IAccount getAccount(String id) {
-        return accountList.stream().filter(iAccount -> iAccount.getId() == id).toList().get(0);
+        return accountList.stream().filter(iAccount -> iAccount.getId().equals(id)).toList().get(0);
     }
 
     @Override

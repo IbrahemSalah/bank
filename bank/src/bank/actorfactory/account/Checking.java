@@ -1,17 +1,19 @@
 package bank.actorfactory.account;
 
+import bank.actorfactory.customer.BankCustomerTypeEnum;
+
 public class Checking extends BankAccount {
 
     final double interestRate = 0.01;
     double balance;
 
-    BankAccountTypeEnum bankAccountTypeEnum;
+    BankCustomerTypeEnum bankCustomerTypeEnum;
 
-    public Checking(String email, String accountNumber, BankAccountTypeEnum bankAccountTypeEnum) {
+    public Checking(String email, String accountNumber, BankCustomerTypeEnum bankCustomerTypeEnum) {
         this.email = email;
         this.accountNumber = accountNumber;
         this.balance = 0;
-        this.bankAccountTypeEnum = bankAccountTypeEnum;
+        this.bankCustomerTypeEnum = bankCustomerTypeEnum;
     }
 
     public void setBalance(double balance) {
@@ -30,16 +32,16 @@ public class Checking extends BankAccount {
 
     @Override
     public String getId() {
-        return getAccountNumber();
+        return super.getAccountNumber();
     }
 
     @Override
     public String getEmail() {
-        return getEmail();
+        return super.getEmail();
     }
 
     @Override
-    public BankAccountTypeEnum getType() {
-        return bankAccountTypeEnum;
+    public BankCustomerTypeEnum getCustomerAccountType() {
+        return bankCustomerTypeEnum;
     }
 }

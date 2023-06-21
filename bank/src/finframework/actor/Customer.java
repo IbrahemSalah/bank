@@ -19,6 +19,7 @@ public abstract class Customer implements ICustomer {
     private String email;
 
 
+    @Override
     public String getName() {
         return name;
     }
@@ -35,6 +36,7 @@ public abstract class Customer implements ICustomer {
         this.street = street;
     }
 
+    @Override
     public String getCity() {
         return city;
     }

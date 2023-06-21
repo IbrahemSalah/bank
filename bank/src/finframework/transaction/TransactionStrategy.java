@@ -7,7 +7,7 @@ public abstract class TransactionStrategy {
 
     public abstract IAccount moneyOut(IAccount account, int amount);
 
-    public void sendEmail(IAccount iAccount) {
-        System.out.println("Notify transaction:" + iAccount.getEmail());
+    public void sendEmail(String msg) {
+        System.out.println(msg);
     }
 }

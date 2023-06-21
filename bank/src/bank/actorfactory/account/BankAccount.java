@@ -1,5 +1,6 @@
 package bank.actorfactory.account;
 
+import bank.actorfactory.customer.BankCustomerTypeEnum;
 import finframework.actor.IAccount;
 
 public abstract class BankAccount implements IAccount {
@@ -7,7 +8,7 @@ public abstract class BankAccount implements IAccount {
     String email;
     String accountNumber;
 
-    BankAccountTypeEnum bankAccountTypeEnum;
+    BankCustomerTypeEnum bankCustomerTypeEnum;
 
     @Override
     public String getEmail() {
@@ -27,7 +28,7 @@ public abstract class BankAccount implements IAccount {
     }
 
     @Override
-    public BankAccountTypeEnum getType() {
-        return bankAccountTypeEnum;
+    public BankCustomerTypeEnum getCustomerAccountType() {
+        return bankCustomerTypeEnum;
     }
 }

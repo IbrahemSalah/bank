@@ -18,6 +18,7 @@ public abstract class CCAccount implements IAccount {
         this.customerTypeEnum = customerTypeEnum;
     }
 
+    @Override
     public String getExpirationDate() {
         return expirationDate;
     }

@@ -8,5 +8,6 @@ public interface IAccount {
     String getId();
     String getEmail();
 
+    String getExpirationDate();
     CustomerTypeEnum getCustomerAccountType();
 }

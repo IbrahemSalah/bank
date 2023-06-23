@@ -1,6 +1,6 @@
 package gui.bank;
 
-import bank.transaction.proxy.TransactionType;
+import Bank.transaction.proxy.TransactionType;
 
 import javax.swing.*;
 import java.awt.*;

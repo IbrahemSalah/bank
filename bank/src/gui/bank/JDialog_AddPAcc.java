@@ -4,9 +4,9 @@ package gui.bank;
 		A basic implementation of the JDialog class.
 **/
 
-import bank.actorfactory.account.BankAccountTypeEnum;
-import finframework.actor.CustomerTypeEnum;
-import bank.actorfactory.customer.CustomerCreationParam;
+import Bank.actorfactory.account.BankAccountTypeEnum;
+import Finco.actor.CustomerTypeEnum;
+import Bank.actorfactory.customer.CustomerCreationParam;
 
 import javax.swing.*;
 import java.awt.*;

@@ -2,9 +2,9 @@
 		A basic implementation of the JDialog class.
 */
 package gui.ccard;
-import creditcard.actorfactory.account.CCardAccountTypeEnum;
-import creditcard.actorfactory.customer.CCCustomerCreationParam;
-import finframework.actor.CustomerTypeEnum;
+import CCard.actorfactory.account.CCardAccountTypeEnum;
+import CCard.actorfactory.customer.CCCustomerCreationParam;
+import Finco.actor.CustomerTypeEnum;
 
 public class JDialog_AddCCAccount extends javax.swing.JDialog
 {

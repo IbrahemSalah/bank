@@ -1,7 +1,7 @@
 package gui.bank;
 
-import bank.controller.BankController;
-import finframework.controller.Controller;
+import Bank.controller.BankController;
+import Finco.controller.Controller;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;

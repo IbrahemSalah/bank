@@ -1,7 +1,7 @@
 package gui.ccard;
 
-import creditcard.controller.CCardController;
-import finframework.controller.Controller;
+import CCard.controller.CCardController;
+import Finco.controller.Controller;
 
 import java.awt.*;
 import java.util.List;

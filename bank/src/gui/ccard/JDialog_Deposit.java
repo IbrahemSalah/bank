@@ -1,9 +1,5 @@
 package gui.ccard;
-import creditcard.transaction.proxy.CCardTransactionType;
-import gui.ccard.CardFrm;
-
-import java.awt.*;
-import javax.swing.*;
+import CCard.transaction.proxy.CCardTransactionType;
 
 public class JDialog_Deposit extends javax.swing.JDialog
 {

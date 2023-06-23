@@ -1,7 +1,7 @@
 package gui.bank;
-import bank.actorfactory.account.BankAccountTypeEnum;
-import finframework.actor.CustomerTypeEnum;
-import bank.actorfactory.customer.CustomerCreationParam;
+import Bank.actorfactory.account.BankAccountTypeEnum;
+import Finco.actor.CustomerTypeEnum;
+import Bank.actorfactory.customer.CustomerCreationParam;
 
 import javax.swing.*;
 import java.awt.*;
